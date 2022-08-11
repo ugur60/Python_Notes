@@ -1,0 +1,47 @@
+
+Ancak öncelikle gmail üzerinden güvensiz uygulamalara izin vermemiz gerekiyor. İlk olarak şu linke gidiyoruz;
+
+"https://myaccount.google.com/lesssecureapps"
+
+Artık mail atma kodumuzu yazabiliriz.
+
+
+import smtplib
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import sys
+
+mesaj=MIMEMultipart()
+mesaj["from"]= "" #mail adresi gelecektir
+mesaj["To"]="" #mail adresi gelecektir
+mesaj["Subject"]="SMTP Mail Gönderme"
+
+yazi="""
+smtp ile mail gönderme
+Uğur yurttutan
+"""
+
+mesaj_gövdesi=MIMEText(yazi,"plain")
+mesaj.attach(mesaj_gövdesi)
+
+try:
+    mail=smtplib.SMTP("smtp.gmail.com",587)
+
+    mail.ehlo()
+    mail.starttls()
+    mail.login("","") # birinci alana gönderici mail, ikici alana parola
+    mail.sendmail(mesaj["From"],mesaj["To"],mesaj.as_string())
+    print("mail gönderildi....")
+    
+    
+    
+Not* bu kodları kendim oluşturmadım, Mustafa Murat Coşkunun Sıfırdan iler seviye kursundan faydalanarak kendim için örnek amacıyla burada kayıt altına alıyorum...
+
+    mail.close()
+except:
+    sys.stderr.write("Bir Sorun Oluştu.")
+    sys.stderr.flush()
+
+
+
