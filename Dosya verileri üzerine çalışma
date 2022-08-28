@@ -1,4 +1,4 @@
-  Bu çalışma  Mustafa Murat Coşkun'un sıfırdan ileri seviye python programalama dersi içerisinde yürütülen proje ödevinden ilerlenerek yapılmıştır.
+  
   
   
 def not_hesapla(satır):
@@ -146,3 +146,4 @@ with open("öğrenci_notları","r",encoding="utf-8") as file5:
             file6.write(str(a))
 
 
+*******Bu çalışma  Mustafa Murat Coşkun'un sıfırdan ileri seviye python programalama dersi içerisinde yürütülen proje ödevinden ilerlenerek yapılmıştır.
