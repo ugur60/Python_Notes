@@ -1,0 +1,45 @@
+
+
+
+with open("Futbolcular.txt","r",encoding="utf-8") as file:
+    GS = list()
+    FB = list()
+    BJK = list()
+    TS = list()
+
+    for satır in file:
+        satır = satır[:-1]
+        liste = satır.split(",")
+        isim = liste[0]
+        Takım = liste[1]
+        if (Takım == "GS"):
+            GS.append(satır+"\n")
+
+        elif (Takım == "FB"):
+            FB.append(satır+"\n")
+
+        elif (Takım == "BJK"):
+            BJK.append(satır+"\n")
+        else:
+            TS.append(satır+"\n")
+
+    with open("GS.txt","w",encoding="utf-8") as file1:
+        for i in GS:
+            file1.write(i)
+    with open("FB.txt","w",encoding="utf-8") as file2:
+        for i in FB:
+            file2.write(i)
+    with open("BJK.txt","w",encoding="utf-8") as file3:
+        for i in BJK:
+            file3.write(i)
+    with open("TS.txt","w",encoding="utf-8") as file4:
+        for i in TS:
+            file4.write(i)
+            
+            
+
+
+
+
+
+
